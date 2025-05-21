@@ -11,6 +11,9 @@ def startGame():
 
     pygame.display.set_caption("Space Shooter")
 
+    playerX = 0
+    playerY = 0
+
     running = True
     while running:
         for event in pygame.event.get():
@@ -19,18 +22,22 @@ def startGame():
 
         # Game logic and drawing would go here
         playerShip = pygame.image.load('assets/Space_Shooter_Sprite.png').convert()
-        r = playerShip.get_rect()
-        r.center = screen.get_rect().center
-        screen.blit(playerShip, r)
 
-        # userGameInput = input("End Game? Type 'Y' to quit: ")
+        key = pygame.key.get_pressed()
 
-        # if (userGameInput.lower() == 'y'):
-        #        running = False
-        # else:
-        #     print("Invalid input. Try again")
+        if key[pygame.K_a] == True:
+            playerX-=1
+        if key[pygame.K_d] == True:
+            playerX+=1
+        if key[pygame.K_w] == True:
+            playerY-=1
+        if key[pygame.K_s] == True:
+            playerY+=1
+
+        screen.blit(playerShip, (playerX, playerY))
+        # pygame.display.flip()
 
         # # Update the display
         pygame.display.update()
-        
+
     pygame.quit()
