@@ -23,17 +23,14 @@ def startGame():
         r.center = screen.get_rect().center
         screen.blit(playerShip, r)
 
-        pygame.display.flip()
+        # userGameInput = input("End Game? Type 'Y' to quit: ")
 
-        userGameInput = input("End Game? Type 'Y' to quit: ")
-
-        if (userGameInput.lower() == 'y'):
-                # Quit Pygame
-               pygame.quit()
-               running = False
-        else:
-            print("Invalid input. Try again")
-
+        # if (userGameInput.lower() == 'y'):
+        #        running = False
+        # else:
+        #     print("Invalid input. Try again")
 
         # # Update the display
-        # pygame.display.flip()
+        pygame.display.update()
+        
+    pygame.quit()
