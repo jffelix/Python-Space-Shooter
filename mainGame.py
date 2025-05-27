@@ -11,8 +11,8 @@ def startGame():
 
     pygame.display.set_caption("Space Shooter")
 
-    playerX = 0
-    playerY = 0
+    playerX = 500
+    playerY = 700
 
     running = True
     while running:
