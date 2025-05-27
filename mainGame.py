@@ -27,13 +27,13 @@ def startGame():
         key = pygame.key.get_pressed()
 
         if key[pygame.K_a] == True:
-            playerX-=1
+            playerX-=2
         if key[pygame.K_d] == True:
-            playerX+=1
+            playerX+=2
         if key[pygame.K_w] == True:
-            playerY-=1
+            playerY-=2
         if key[pygame.K_s] == True:
-            playerY+=1
+            playerY+=2
 
         screen.blit(background, (0, 0))
         screen.blit(playerShip, (playerX, playerY))
