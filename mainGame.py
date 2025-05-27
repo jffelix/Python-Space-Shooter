@@ -11,7 +11,7 @@ def startGame():
 
     pygame.display.set_caption("Space Shooter")
 
-    playerX = 500
+    playerX = 450
     playerY = 700
 
     running = True
@@ -21,6 +21,7 @@ def startGame():
                 running = False
 
         # Game logic and drawing would go here
+        background = pygame.image.load('assets/Space_Shooter_Background.png').convert()
         playerShip = pygame.image.load('assets/Space_Shooter_Sprite.png').convert()
 
         key = pygame.key.get_pressed()
@@ -34,6 +35,7 @@ def startGame():
         if key[pygame.K_s] == True:
             playerY+=1
 
+        screen.blit(background, (0, 0))
         screen.blit(playerShip, (playerX, playerY))
         # pygame.display.flip()
 
