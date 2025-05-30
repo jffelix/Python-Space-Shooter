@@ -12,8 +12,6 @@ def startGame():
     pygame.display.set_caption("Space Shooter")
 
     background = pygame.image.load('assets/Space_Shooter_Background.png').convert()
-    playerShip = pygame.image.load('assets/Space_Shooter_Sprite.png').convert()
-    playerShip_rect = playerShip.get_rect(center=(400, 300))
 
     playerX = 450
     playerY = 700
@@ -28,6 +26,8 @@ def startGame():
 
         # Game logic and drawing would go here
 
+        playerShip = pygame.image.load('assets/Space_Shooter_Sprite.png').convert()
+        playerShip_rect = playerShip.get_rect(center=(playerX, playerY))
 
         # laserPoint = pygame.transform.rotate(playerShip,angle)
 
@@ -44,13 +44,13 @@ def startGame():
 
         if key[pygame.K_j] == True:
             angle -= 2
-
+            # screen.blit(rotated_image, rotated_rec)
 
         rotated_image = pygame.transform.rotate(playerShip, angle)
         rotated_rec = rotated_image.get_rect(center=playerShip_rect.center)
-
+    
         screen.blit(background, (0, 0))
-        # screen.blit(playerShip, (playerX, playerY))
+        screen.blit(playerShip, (playerX, playerY))
         screen.blit(rotated_image, rotated_rec)
         # pygame.display.flip()
 
