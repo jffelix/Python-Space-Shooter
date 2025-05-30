@@ -1,12 +1,5 @@
 import pygame
 
-def rot_center(image, angle, x, y):
-    
-    rotated_image = pygame.transform.rotate(image, angle)
-    new_rect = rotated_image.get_rect(center = image.get_rect(center = (x, y)).center)
-
-    return rotated_image, new_rect
-
 def startGame():
     print("Loading Game...")
 
@@ -18,8 +11,14 @@ def startGame():
 
     pygame.display.set_caption("Space Shooter")
 
+    background = pygame.image.load('assets/Space_Shooter_Background.png').convert()
+    playerShip = pygame.image.load('assets/Space_Shooter_Sprite.png').convert()
+    playerShip_rect = playerShip.get_rect(center=(400, 300))
+
     playerX = 450
     playerY = 700
+
+    angle = 0
 
     running = True
     while running:
@@ -28,8 +27,9 @@ def startGame():
                 running = False
 
         # Game logic and drawing would go here
-        background = pygame.image.load('assets/Space_Shooter_Background.png').convert()
-        playerShip = pygame.image.load('assets/Space_Shooter_Sprite.png').convert()
+
+
+        # laserPoint = pygame.transform.rotate(playerShip,angle)
 
         key = pygame.key.get_pressed()
 
@@ -43,10 +43,15 @@ def startGame():
             playerY+=2
 
         if key[pygame.K_j] == True:
-            rot_center(playerShip, 1, playerX, playerY)
+            angle -= 2
+
+
+        rotated_image = pygame.transform.rotate(playerShip, angle)
+        rotated_rec = rotated_image.get_rect(center=playerShip_rect.center)
 
         screen.blit(background, (0, 0))
-        screen.blit(playerShip, (playerX, playerY))
+        # screen.blit(playerShip, (playerX, playerY))
+        screen.blit(rotated_image, rotated_rec)
         # pygame.display.flip()
 
         # # Update the display
