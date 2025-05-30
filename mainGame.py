@@ -1,5 +1,12 @@
 import pygame
 
+def rot_center(image, angle, x, y):
+    
+    rotated_image = pygame.transform.rotate(image, angle)
+    new_rect = rotated_image.get_rect(center = image.get_rect(center = (x, y)).center)
+
+    return rotated_image, new_rect
+
 def startGame():
     print("Loading Game...")
 
@@ -34,6 +41,9 @@ def startGame():
             playerY-=2
         if key[pygame.K_s] == True:
             playerY+=2
+
+        if key[pygame.K_j] == True:
+            rot_center(playerShip, 1, playerX, playerY)
 
         screen.blit(background, (0, 0))
         screen.blit(playerShip, (playerX, playerY))
