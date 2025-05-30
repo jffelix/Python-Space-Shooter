@@ -24,13 +24,10 @@ def startGame():
             if event.type == pygame.QUIT:
                 running = False
 
-        # Game logic and drawing would go here
-
+        # Game logic and drawing here
         playerShip = pygame.image.load('assets/Space_Shooter_Sprite.png').convert()
-        playerShip_rect = playerShip.get_rect(center=(playerX, playerY))
-
-        # laserPoint = pygame.transform.rotate(playerShip,angle)
-
+        # playerShip_rect = playerShip.get_rect(center=(playerX, playerY))
+        
         key = pygame.key.get_pressed()
 
         if key[pygame.K_a] == True:
@@ -43,14 +40,14 @@ def startGame():
             playerY+=2
 
         if key[pygame.K_j] == True:
+            angle += 2
+        if key[pygame.K_k] == True:
             angle -= 2
-            # screen.blit(rotated_image, rotated_rec)
 
         rotated_image = pygame.transform.rotate(playerShip, angle)
-        rotated_rec = rotated_image.get_rect(center=playerShip_rect.center)
+        rotated_rec = rotated_image.get_rect(center=(playerX, playerY))
     
         screen.blit(background, (0, 0))
-        screen.blit(playerShip, (playerX, playerY))
         screen.blit(rotated_image, rotated_rec)
         # pygame.display.flip()
 
