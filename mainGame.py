@@ -21,6 +21,7 @@ def startGame():
     playerY = 700
 
     angle = 0
+    score = 0
 
     running = True
     while running:
