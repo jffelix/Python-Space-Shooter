@@ -16,6 +16,7 @@ def startGame():
     pygame.display.set_caption("Space Shooter")
 
     background = pygame.image.load('assets/Space_Shooter_Background.png').convert()
+    playerImg = pygame.image.load('assets/Space_Shooter_Sprite.png').convert()
 
     playerX = 450
     playerY = 700
@@ -35,8 +36,6 @@ def startGame():
                 running = False
 
         # Game logic and drawing here
-        playerImg = pygame.image.load('assets/Space_Shooter_Sprite.png').convert()
-        # playerShip_rect = playerShip.get_rect(center=(playerX, playerY))
         playerShip = pygame.transform.scale(playerImg, (75, 75))
         
         key = pygame.key.get_pressed()
