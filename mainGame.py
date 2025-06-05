@@ -23,6 +23,10 @@ def startGame():
     angle = 0
     score = 0
 
+    laserX_change = 0
+    laserY_change = 0
+    laser_state = "ready"
+
     running = True
     while running:
         for event in pygame.event.get():
