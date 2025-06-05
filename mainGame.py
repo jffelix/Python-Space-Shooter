@@ -16,8 +16,8 @@ def startGame():
     pygame.display.set_caption("Space Shooter")
 
     background = pygame.image.load('assets/Space_Shooter_Background.png').convert()
-    playerImg = pygame.image.load('assets/Space_Shooter_Sprite.png').convert()
 
+    playerImg = pygame.image.load('assets/Space_Shooter_Sprite.png').convert()
     playerX = 450
     playerY = 700
 
