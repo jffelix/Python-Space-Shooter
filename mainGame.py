@@ -44,8 +44,6 @@ def startGame():
                 running = False
 
         # Game logic and drawing here
-        # playerShip = pygame.transform.scale(playerImg, (75, 75))
-        
         key = pygame.key.get_pressed()
 
         if key[pygame.K_a] == True:
@@ -62,21 +60,16 @@ def startGame():
         if key[pygame.K_k] == True:
             angle -= 2
 
-        # rotated_image = pygame.transform.rotate(playerShip, angle)
-        # rotated_rec = rotated_image.get_rect(center=(playerX, playerY))
-
         angle_text = str(angle)
         angle_surface = font.render(angle_text, True, (255, 255, 255))
     
         screen.blit(background, (0, 0))
-        # screen.blit(rotated_image, rotated_rec)
         screen.blit(angle_surface, (100, 50))
-        # pygame.display.flip()
 
-        # player(playerX, playerY, angle)
         player(angle)
 
         # # Update the display
         pygame.display.update()
+        # pygame.display.flip()
 
     pygame.quit()
