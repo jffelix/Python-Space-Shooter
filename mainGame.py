@@ -29,10 +29,10 @@ def startGame():
     laserY_change = 0
     laser_state = "ready"
 
-    def player(angleNum):
+    def player(x, y, angleNum):
         playerShip = pygame.transform.scale(playerImg, (75, 75))
         rotated_image = pygame.transform.rotate(playerShip, angleNum)
-        rotated_rec = rotated_image.get_rect(center=(playerX, playerY))
+        rotated_rec = rotated_image.get_rect(center=(x, y))
         # screen.blit(playerShip, (x, y))
         screen.blit(rotated_image, rotated_rec)
         pygame.display.update()
@@ -66,7 +66,7 @@ def startGame():
         screen.blit(background, (0, 0))
         screen.blit(angle_surface, (100, 50))
 
-        player(angle)
+        player(playerX, playerY, angle)
 
         # # Update the display
         pygame.display.update()
