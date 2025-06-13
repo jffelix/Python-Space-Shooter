@@ -39,7 +39,8 @@ def startGame():
 
     def laser(x, y):
         # print("Hello from laser function!")
-        screen.blit(laserImg, (x, y))
+        laserShot = pygame.transform.scale(laserImg, (75, 75))
+        screen.blit(laserShot, (x, y))
         pygame.display.update()
         pygame.time.wait(1000)
 
