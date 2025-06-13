@@ -39,6 +39,7 @@ def startGame():
 
     def laser():
         print("Hello from laser function!")
+        pygame.time.wait(1000)
 
     running = True
     while running:
@@ -62,6 +63,8 @@ def startGame():
             angle += 2
         if key[pygame.K_k] == True:
             angle -= 2
+        if key[pygame.K_SPACE] == True:
+            laser()
 
         angle_text = str(angle)
         angle_surface = font.render(angle_text, True, (255, 255, 255))
