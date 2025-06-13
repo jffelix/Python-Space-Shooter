@@ -37,8 +37,10 @@ def startGame():
         screen.blit(rotated_image, rotated_rec)
         pygame.display.update()
 
-    def laser():
-        print("Hello from laser function!")
+    def laser(x, y):
+        # print("Hello from laser function!")
+        screen.blit(laserImg, (x, y))
+        pygame.display.update()
         pygame.time.wait(1000)
 
     running = True
@@ -64,7 +66,7 @@ def startGame():
         if key[pygame.K_k] == True:
             angle -= 2
         if key[pygame.K_SPACE] == True:
-            laser()
+            laser(playerX, playerY)
 
         angle_text = str(angle)
         angle_surface = font.render(angle_text, True, (255, 255, 255))
