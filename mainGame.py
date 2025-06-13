@@ -42,6 +42,7 @@ def startGame():
         laserXPos = x - 40
         laserYPos = y - 40
         laserShot = pygame.transform.scale(laserImg, (75, 75))
+        # need to rotate laser counter-clockwise to center to ship
         screen.blit(laserShot, (laserXPos, laserYPos))
         pygame.display.update()
         pygame.time.wait(1000)
