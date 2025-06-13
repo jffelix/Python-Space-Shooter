@@ -37,6 +37,9 @@ def startGame():
         screen.blit(rotated_image, rotated_rec)
         pygame.display.update()
 
+    def laser():
+        print("Hello from laser function!")
+
     running = True
     while running:
         for event in pygame.event.get():
