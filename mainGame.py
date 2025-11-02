@@ -86,6 +86,7 @@ def startGame():
         screen.blit(angle_surface, (100, 50))
 
         player(playerX, playerY, angle)
+        # will need to add a laser invoke to track position and angle
 
         # # Update the display
         pygame.display.update()
