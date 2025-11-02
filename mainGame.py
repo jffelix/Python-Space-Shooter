@@ -77,7 +77,7 @@ def startGame():
             angle -= 2
         if key[pygame.K_SPACE] == True:
             # laser(playerX, playerY)
-            fireLaser()
+            fireLaser() # this invokes 7 times with 1 press
 
         angle_text = str(angle)
         angle_surface = font.render(angle_text, True, (255, 255, 255))
