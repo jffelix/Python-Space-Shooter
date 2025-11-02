@@ -43,6 +43,7 @@ def startGame():
         laserYPos = y - 40
         laserShot = pygame.transform.scale(laserImg, (75, 75))
         # need to rotate laser counter-clockwise to center to ship
+            # laser will need to rotate with ship, even when not displayed
         # laser overlaps ship image
         screen.blit(laserShot, (laserXPos, laserYPos))
         pygame.display.update()
