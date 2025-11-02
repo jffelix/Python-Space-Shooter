@@ -50,6 +50,9 @@ def startGame():
         pygame.display.update()
         pygame.time.wait(1000)
 
+    def fireLaser():
+        print("Hello from fireLaser!")
+
     running = True
     while running:
         for event in pygame.event.get():
@@ -73,7 +76,8 @@ def startGame():
         if key[pygame.K_k] == True:
             angle -= 2
         if key[pygame.K_SPACE] == True:
-            laser(playerX, playerY)
+            # laser(playerX, playerY)
+            fireLaser()
 
         angle_text = str(angle)
         angle_surface = font.render(angle_text, True, (255, 255, 255))
