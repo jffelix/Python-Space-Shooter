@@ -27,6 +27,7 @@ def startGame():
     laserImg = pygame.image.load('assets/Space_Shooter_Laser.png').convert()
     laserX_change = 0
     laserY_change = 0
+    laserAngle = 0
     laser_state = "ready"
 
     def player(x, y, angleNum):
